@@ -3,6 +3,8 @@ const client = new Client({
     intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] 
 });
 
+require('dotenv').config();
+
 client.on('ready', () => {
     console.log(`✅ AK-37 Bot online as ${client.user.tag}!`);
 });
@@ -17,5 +19,5 @@ client.on('messageCreate', message => {
         message.channel.send('📅 **Upcoming Races:**\n• Le Mans Ultimate Special Event \n• Spa 4H');
     }
 });
-
-client.login(process.env.DISCORD_TOKEN);
+ 
+client.login(process.env.TOKEN);
